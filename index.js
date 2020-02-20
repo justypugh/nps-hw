@@ -8,8 +8,10 @@ return queryItems.join('&');
 }
 
 function getParks(query, maxResults=10) {
+    let queryArray = query.split(", ");
+    console.log(queryArray);
     const params = {
-        stateCode: [query],
+        stateCode: queryArray,
         limit: maxResults,
         api_key: apiKey,
     };
